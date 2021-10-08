@@ -1,0 +1,31 @@
+		local cframe = game.Players.LocalPlayer.Character["Left Leg"].CFrame
+for i,v in pairs(game.Workspace.vehicles.Car1:GetDescendants()) do
+	if v:IsA("Part") then
+		v.CFrame = cframe + Vector3.new(20, 0, 0)
+	end
+end
+for i,a in pairs(game.Workspace.vehicles.Car2:GetDescendants()) do
+	if a:IsA("Part") then
+		a.CFrame = cframe + Vector3.new(20, 0, 20)
+	end
+end
+for i,b in pairs(game.Workspace.vehicles.Car3:GetDescendants()) do
+	if b:IsA("Part") then
+		b.CFrame = cframe + Vector3.new(20, 0, -20)
+	end
+end
+for i,c in pairs(game.Workspace.vehicles.Car4:GetDescendants()) do
+	if c:IsA("Part") then
+		c.CFrame = cframe + Vector3.new(20, 0, -40)
+	end
+end
+for i,d in pairs(game.Workspace.vehicles.Car5:GetDescendants()) do
+	if d:IsA("Part") then
+		d.CFrame = cframe + Vector3.new(20, 0, 40)
+	end
+end
+		for i,e in pairs(game.Workspace.vehicles.Car6:GetDescendants()) do
+			if e:IsA("Part") then
+				e.CFrame = cframe + Vector3.new(20, 0, -60)
+			end
+		end
