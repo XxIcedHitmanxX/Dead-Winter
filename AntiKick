@@ -1,0 +1,10 @@
+-- Kick Bypass
+local old;
+old = hookfunction(getrawmetatable(game).__namecall,function(...)
+    local method = getnamecallmethod():lower()
+    local args = {...}
+    if method == "kick" or method == "fireserver" and tostring(args[1]) == "kickPlyr" then
+        return
+    end
+    return old(...)
+end)
