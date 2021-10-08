@@ -1,1 +1,309 @@
+-- Gui to Lua
+-- Version: 3.2
 
+-- Instances:
+
+local BloodyWinter = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local Top = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local Close = Instance.new("TextButton")
+local Underbar = Instance.new("Frame")
+local Scripts = Instance.new("Frame")
+local UIGridLayout = Instance.new("UIGridLayout")
+local Item = Instance.new("TextBox")
+local Amount = Instance.new("TextBox")
+local GasAmm = Instance.new("TextBox")
+local Spawn = Instance.new("TextButton")
+local BringCar = Instance.new("TextButton")
+
+--Properties:
+
+BloodyWinter.Name = "Bloody Winter"
+BloodyWinter.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+BloodyWinter.ResetOnSpawn = false
+
+Main.Name = "Main"
+Main.Parent = BloodyWinter
+Main.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+Main.Position = UDim2.new(0.547224879, 0, 0.312186986, 0)
+Main.Size = UDim2.new(0, 400, 0, 300)
+
+Top.Name = "Top"
+Top.Parent = Main
+Top.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Top.Size = UDim2.new(0, 400, 0, 20)
+
+Title.Name = "Title"
+Title.Parent = Top
+Title.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Title.BorderSizePixel = 0
+Title.Size = UDim2.new(0, 380, 0, 20)
+Title.Font = Enum.Font.SourceSansBold
+Title.Text = "Bloody Winter"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 14.000
+Title.TextXAlignment = Enum.TextXAlignment.Left
+
+Close.Name = "Close"
+Close.Parent = Top
+Close.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Close.Position = UDim2.new(0.949999988, 0, 0, 0)
+Close.Size = UDim2.new(0, 20, 0, 20)
+Close.Font = Enum.Font.SourceSansBold
+Close.Text = "-"
+Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+Close.TextScaled = true
+Close.TextSize = 14.000
+Close.TextWrapped = true
+
+Underbar.Name = "Underbar"
+Underbar.Parent = Top
+Underbar.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Underbar.Position = UDim2.new(0, 0, 1, 0)
+Underbar.Size = UDim2.new(0, 400, 0, 2)
+
+Scripts.Name = "Scripts"
+Scripts.Parent = Main
+Scripts.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+Scripts.BorderSizePixel = 0
+Scripts.Position = UDim2.new(0, 0, 0.0966666639, 0)
+Scripts.Size = UDim2.new(0, 400, 0, 271)
+
+UIGridLayout.Parent = Scripts
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.CellSize = UDim2.new(0, 95, 0, 20)
+
+Item.Name = "Item"
+Item.Parent = Scripts
+Item.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Item.Size = UDim2.new(0, 200, 0, 50)
+Item.ClearTextOnFocus = false
+Item.Font = Enum.Font.SourceSans
+Item.Text = "Item Name"
+Item.TextColor3 = Color3.fromRGB(255, 255, 255)
+Item.TextScaled = true
+Item.TextSize = 14.000
+Item.TextWrapped = true
+
+Amount.Name = "Amount"
+Amount.Parent = Scripts
+Amount.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Amount.Size = UDim2.new(0, 200, 0, 50)
+Amount.ClearTextOnFocus = false
+Amount.Font = Enum.Font.SourceSans
+Amount.Text = "Amount"
+Amount.TextColor3 = Color3.fromRGB(255, 255, 255)
+Amount.TextScaled = true
+Amount.TextSize = 14.000
+Amount.TextWrapped = true
+
+GasAmm.Name = "GasAmm"
+GasAmm.Parent = Scripts
+GasAmm.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+GasAmm.Size = UDim2.new(0, 200, 0, 50)
+GasAmm.ClearTextOnFocus = false
+GasAmm.Font = Enum.Font.SourceSans
+GasAmm.Text = "Gasoline/Ammo Amount"
+GasAmm.TextColor3 = Color3.fromRGB(255, 255, 255)
+GasAmm.TextScaled = true
+GasAmm.TextSize = 14.000
+GasAmm.TextWrapped = true
+
+Spawn.Name = "Spawn"
+Spawn.Parent = Scripts
+Spawn.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Spawn.Size = UDim2.new(0, 200, 0, 50)
+Spawn.Font = Enum.Font.SourceSans
+Spawn.Text = "Spawn Item"
+Spawn.TextColor3 = Color3.fromRGB(255, 255, 255)
+Spawn.TextSize = 14.000
+
+BringCar.Name = "Bring Car"
+BringCar.Parent = Scripts
+BringCar.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+BringCar.Size = UDim2.new(0, 200, 0, 50)
+BringCar.Font = Enum.Font.SourceSans
+BringCar.Text = "Bring Car"
+BringCar.TextColor3 = Color3.fromRGB(255, 255, 255)
+BringCar.TextSize = 14.000
+
+-- Scripts:
+
+local function WHGOFML_fake_script() -- Title.Name Changer 
+	local script = Instance.new('LocalScript', Title)
+
+	local title = script.Parent
+	local font = script.Parent.Font
+	while true do
+		title.Font = "SourceSansBold"
+		wait(0.1)
+		title.Font = "SpecialElite"
+		wait(0.1)
+		title.Font = "LuckiestGuy"
+		wait(0.1)
+		title.Font = "Creepster"
+		wait(0.1)
+	end
+end
+coroutine.wrap(WHGOFML_fake_script)()
+local function GQKBZRF_fake_script() -- Title.Name Color 
+	local script = Instance.new('LocalScript', Title)
+
+	local ts = game:GetService("TweenService")
+	local title = script.Parent
+	while true do
+		ts:Create(title, TweenInfo.new(1), {TextColor3 = Color3.fromRGB(255, 0, 0)}):Play()
+		wait(1)
+		ts:Create(title, TweenInfo.new(1), {TextColor3 = Color3.fromRGB(255, 0, 255)}):Play()
+		wait(1)
+		ts:Create(title, TweenInfo.new(1), {TextColor3 = Color3.fromRGB(0, 255, 0)}):Play()
+		wait(1)
+		ts:Create(title, TweenInfo.new(1), {TextColor3 = Color3.fromRGB(255, 255, 0)}):Play()
+		wait(1)
+		ts:Create(title, TweenInfo.new(1), {TextColor3 = Color3.fromRGB(0, 0, 255)}):Play()
+		wait(1)
+		ts:Create(title, TweenInfo.new(1), {TextColor3 = Color3.fromRGB(0, 255, 255)}):Play()
+		wait(1)
+	end
+end
+coroutine.wrap(GQKBZRF_fake_script)()
+local function EEIQ_fake_script() -- Close.Name Color 
+	local script = Instance.new('LocalScript', Close)
+
+	local ts = game:GetService("TweenService")
+	local title = script.Parent
+	while true do
+		ts:Create(title, TweenInfo.new(1), {TextColor3 = Color3.fromRGB(255, 0, 0)}):Play()
+		wait(1)
+		ts:Create(title, TweenInfo.new(1), {TextColor3 = Color3.fromRGB(255, 0, 255)}):Play()
+		wait(1)
+		ts:Create(title, TweenInfo.new(1), {TextColor3 = Color3.fromRGB(0, 255, 0)}):Play()
+		wait(1)
+		ts:Create(title, TweenInfo.new(1), {TextColor3 = Color3.fromRGB(255, 255, 0)}):Play()
+		wait(1)
+		ts:Create(title, TweenInfo.new(1), {TextColor3 = Color3.fromRGB(0, 0, 255)}):Play()
+		wait(1)
+		ts:Create(title, TweenInfo.new(1), {TextColor3 = Color3.fromRGB(0, 255, 255)}):Play()
+		wait(1)
+	end
+end
+coroutine.wrap(EEIQ_fake_script)()
+local function IBDLVD_fake_script() -- Close.LocalScript 
+	local script = Instance.new('LocalScript', Close)
+
+	local ts = game:GetService("TweenService")
+	local main = script.Parent.Parent.Parent
+	local scr = script.Parent.Parent.Parent.Scripts
+	local winstate = 0
+	script.Parent.MouseButton1Down:Connect(function()
+		if winstate == 0 then
+			winstate = 1
+			ts:Create(main, TweenInfo.new(0.5), {Size = UDim2.new(0, 400, 0, 22)}):Play()
+			scr.Visible = false
+		else
+			winstate = 0
+			ts:Create(main, TweenInfo.new(0.5), {Size = UDim2.new(0, 400, 0, 300)}):Play()
+			wait(0.5)
+			scr.Visible = true
+		end
+	end)
+end
+coroutine.wrap(IBDLVD_fake_script)()
+local function MVEN_fake_script() -- Underbar.LocalScript 
+	local script = Instance.new('LocalScript', Underbar)
+
+	local ts = game:GetService("TweenService")
+	local bar = script.Parent
+	while true do
+		ts:Create(bar, TweenInfo.new(1), {BackgroundColor3 = Color3.fromRGB(255, 0, 0)}):Play()
+		wait(1)
+		ts:Create(bar, TweenInfo.new(1), {BackgroundColor3 = Color3.fromRGB(255, 0, 255)}):Play()
+		wait(1)
+		ts:Create(bar, TweenInfo.new(1), {BackgroundColor3 = Color3.fromRGB(0, 255, 0)}):Play()
+		wait(1)
+		ts:Create(bar, TweenInfo.new(1), {BackgroundColor3 = Color3.fromRGB(255, 255, 0)}):Play()
+		wait(1)
+		ts:Create(bar, TweenInfo.new(1), {BackgroundColor3 = Color3.fromRGB(0, 0, 255)}):Play()
+		wait(1)
+		ts:Create(bar, TweenInfo.new(1), {BackgroundColor3 = Color3.fromRGB(0, 255, 255)}):Play()
+		wait(1)
+	end
+end
+coroutine.wrap(MVEN_fake_script)()
+local function AZLGPZ_fake_script() -- Spawn.LocalScript 
+	local script = Instance.new('LocalScript', Spawn)
+
+	local item = script.Parent.Parent.Item
+	local amount = script.Parent.Parent.Amount
+	local GasAmm = script.Parent.Parent.GasAmm
+	script.Parent.MouseButton1Down:Connect(function()
+		for i = 1, amount.Text do
+			game.Workspace.resources.events.createItemInWorld:FireServer(49, item.Text, game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame, GasAmm.Text)
+		end
+	end)
+end
+coroutine.wrap(AZLGPZ_fake_script)()
+local function ZFCEKM_fake_script() -- BringCar.LocalScript 
+	local script = Instance.new('LocalScript', BringCar)
+
+	local item = script.Parent.Parent.Item
+	local amount = script.Parent.Parent.Amount
+	local GasAmm = script.Parent.Parent.GasAmm
+	script.Parent.MouseButton1Down:Connect(function()
+		for i,v in pairs(game:GetService("Workspace").vehicles["Car_Moss"].seatTags:GetDescendants()) do
+			if v.Name == "driver" or v.Name == "passengerSeat1" then
+				if v.Value == "" then
+					for i,t in pairs(v.Parent.Parent:GetDescendants()) do
+						if t:IsA("Part") then
+							t.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+						end
+					end
+				end
+			end
+		end
+	end)
+end
+coroutine.wrap(ZFCEKM_fake_script)()
+local function NOYLJYT_fake_script() -- Main.Dragify 
+	local script = Instance.new('LocalScript', Main)
+
+	local UIS = game:GetService("UserInputService")
+	function dragify(Frame)
+	    dragToggle = nil
+	    local dragSpeed = 0.50
+	    dragInput = nil
+	    dragStart = nil
+	    local dragPos = nil
+	    function updateInput(input)
+	        local Delta = input.Position - dragStart
+	        local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
+	        game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.30), {Position = Position}):Play()
+	    end
+	    Frame.InputBegan:Connect(function(input)
+	        if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
+	            dragToggle = true
+	            dragStart = input.Position
+	            startPos = Frame.Position
+	            input.Changed:Connect(function()
+	                if input.UserInputState == Enum.UserInputState.End then
+	                    dragToggle = false
+	                end
+	            end)
+	        end
+	    end)
+	    Frame.InputChanged:Connect(function(input)
+	        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+	            dragInput = input
+	        end
+	    end)
+	    game:GetService("UserInputService").InputChanged:Connect(function(input)
+	        if input == dragInput and dragToggle then
+	            updateInput(input)
+	        end
+	    end)
+	end
+	
+	dragify(script.Parent)
+end
+coroutine.wrap(NOYLJYT_fake_script)()
