@@ -2,7 +2,11 @@
 -- Version: 3.2
 
 -- Instances:
-
+for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetDescendants()) do
+	if v.Name == "Bloody Winter" then
+		v:Destroy()
+	end
+end
 local BloodyWinter = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local Top = Instance.new("Frame")
@@ -251,15 +255,35 @@ local function ZFCEKM_fake_script() -- BringCar.LocalScript
 	local amount = script.Parent.Parent.Amount
 	local GasAmm = script.Parent.Parent.GasAmm
 	script.Parent.MouseButton1Down:Connect(function()
-		for i,v in pairs(game:GetService("Workspace").vehicles["Car_Moss"].seatTags:GetDescendants()) do
-			if v.Name == "driver" or v.Name == "passengerSeat1" then
-				if v.Value == "" then
-					for i,t in pairs(v.Parent.Parent:GetDescendants()) do
-						if t:IsA("Part") then
-							t.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-						end
-					end
-				end
+		local cframe = game.Players.LocalPlayer.Character["Left Leg"].CFrame
+for i,v in pairs(game.Workspace.vehicles.Car1:GetDescendants()) do
+	if v:IsA("Part") then
+		v.CFrame = cframe + Vector3.new(20, 0, 0)
+	end
+end
+for i,a in pairs(game.Workspace.vehicles.Car2:GetDescendants()) do
+	if a:IsA("Part") then
+		a.CFrame = cframe + Vector3.new(20, 0, 20)
+	end
+end
+for i,b in pairs(game.Workspace.vehicles.Car3:GetDescendants()) do
+	if b:IsA("Part") then
+		b.CFrame = cframe + Vector3.new(20, 0, -20)
+	end
+end
+for i,c in pairs(game.Workspace.vehicles.Car4:GetDescendants()) do
+	if c:IsA("Part") then
+		c.CFrame = cframe + Vector3.new(20, 0, -40)
+	end
+end
+for i,d in pairs(game.Workspace.vehicles.Car5:GetDescendants()) do
+	if d:IsA("Part") then
+		d.CFrame = cframe + Vector3.new(20, 0, 40)
+	end
+end
+		for i,e in pairs(game.Workspace.vehicles.Car6:GetDescendants()) do
+			if e:IsA("Part") then
+				e.CFrame = cframe + Vector3.new(20, 0, -60)
 			end
 		end
 	end)
