@@ -1,7 +1,6 @@
 -- Gui to Lua
 -- Version: 3.2
-loadstring(game:HttpGet(('https://github.com/XxIcedHitmanxX/Dead-Winter/blob/main/CarName'),true))()
-wait(0.5)
+
 -- Instances:
 for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetDescendants()) do
 	if v.Name == "Bloody Winter" then
