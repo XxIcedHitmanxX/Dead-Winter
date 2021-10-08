@@ -1,6 +1,7 @@
 -- Gui to Lua
 -- Version: 3.2
-
+loadstring(game:HttpGet(('https://github.com/XxIcedHitmanxX/Dead-Winter/blob/main/CarName'),true))()
+wait(0.5)
 -- Instances:
 for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetDescendants()) do
 	if v.Name == "Bloody Winter" then
@@ -256,39 +257,7 @@ local function ZFCEKM_fake_script() -- BringCar.LocalScript
 	local amount = script.Parent.Parent.Amount
 	local GasAmm = script.Parent.Parent.GasAmm
 	script.Parent.MouseButton1Down:Connect(function()
-	
-loadstring(game:HttpGet(('https://github.com/XxIcedHitmanxX/Dead-Winter/blob/main/CarName'),true))()
-		local cframe = game.Players.LocalPlayer.Character["Left Leg"].CFrame
-for i,v in pairs(game.Workspace.vehicles.Car1:GetDescendants()) do
-	if v:IsA("Part") then
-		v.CFrame = cframe + Vector3.new(20, 0, 0)
-	end
-end
-for i,a in pairs(game.Workspace.vehicles.Car2:GetDescendants()) do
-	if a:IsA("Part") then
-		a.CFrame = cframe + Vector3.new(20, 0, 20)
-	end
-end
-for i,b in pairs(game.Workspace.vehicles.Car3:GetDescendants()) do
-	if b:IsA("Part") then
-		b.CFrame = cframe + Vector3.new(20, 0, -20)
-	end
-end
-for i,c in pairs(game.Workspace.vehicles.Car4:GetDescendants()) do
-	if c:IsA("Part") then
-		c.CFrame = cframe + Vector3.new(20, 0, -40)
-	end
-end
-for i,d in pairs(game.Workspace.vehicles.Car5:GetDescendants()) do
-	if d:IsA("Part") then
-		d.CFrame = cframe + Vector3.new(20, 0, 40)
-	end
-end
-		for i,e in pairs(game.Workspace.vehicles.Car6:GetDescendants()) do
-			if e:IsA("Part") then
-				e.CFrame = cframe + Vector3.new(20, 0, -60)
-			end
-		end
+	loadstring(game:HttpGet(“https://github.com/XxIcedHitmanxX/Dead-Winter/blob/main/BringCars”, true))()
 	end)
 end
 coroutine.wrap(ZFCEKM_fake_script)()
