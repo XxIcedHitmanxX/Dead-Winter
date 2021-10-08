@@ -8,8 +8,6 @@ for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetDescendants()) do
 	end
 end
 
-loadstring(game:HttpGet(('https://github.com/XxIcedHitmanxX/Dead-Winter/blob/main/CarName'),true))()
-
 local BloodyWinter = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local Top = Instance.new("Frame")
@@ -258,6 +256,8 @@ local function ZFCEKM_fake_script() -- BringCar.LocalScript
 	local amount = script.Parent.Parent.Amount
 	local GasAmm = script.Parent.Parent.GasAmm
 	script.Parent.MouseButton1Down:Connect(function()
+	
+loadstring(game:HttpGet(('https://github.com/XxIcedHitmanxX/Dead-Winter/blob/main/CarName'),true))()
 		local cframe = game.Players.LocalPlayer.Character["Left Leg"].CFrame
 for i,v in pairs(game.Workspace.vehicles.Car1:GetDescendants()) do
 	if v:IsA("Part") then
